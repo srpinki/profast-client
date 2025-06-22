@@ -6,6 +6,11 @@ import {
 } from "react-router";
 import { router } from './Router/Router.jsx';
 
+import 'aos/dist/aos.css'; 
+import Aos from 'aos';
+
+Aos.init();
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className='urbanist-font max-w-7xl mx-auto'>
