@@ -27,15 +27,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/coverage">Coverage</NavLink>
       </li>
-      {user ? (
-        <li>
-          <button onClick={handleLogout}>Logout</button>
-        </li>
-      ) : (
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+        </>
       )}
+      <li>
+        <NavLink to="/send-parcel">Send a parcel</NavLink>
+      </li>
     </>
   );
 
@@ -73,7 +74,17 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <ul>
+          {user ? (
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
+          ) : (
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   );
